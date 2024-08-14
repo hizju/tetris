@@ -12,7 +12,7 @@ import time
 from math import sqrt
 from random import randint
 
-from pygame.constants import KEYDOWN,  K_DOWN, K_LEFT, K_RIGHT, K_UP
+from pygame.constants import KEYDOWN,  K_DOWN, K_LEFT, K_RIGHT, K_UP, K_SPACE
 from data import BLOCK_DATA
 from pygame.locals import QUIT
 
@@ -156,6 +156,11 @@ def main():
                 next_x -= 1
             if key == K_UP:
                 next_t = (next_t + 1) % 4
+                
+            keys = pygame.key.get_pressed() # 지속적으로 누를 때
+            if keys[K_SPACE]: # 키값은 스페이스바로
+                next_y += 1 # key down
+                    
             
             if not is_overlapped(next_x, next_y, next_t):
                 BLOCK.xpos = next_x

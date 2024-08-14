@@ -4,7 +4,7 @@ from math import sqrt
 from random import randint
 import pygame
 from pygame.locals import QUIT, KEYDOWN, \
-    K_LEFT, K_RIGHT, K_DOWN, K_UP
+    K_LEFT, K_RIGHT, K_DOWN, K_UP, K_SPACE
 
 BLOCK_DATA = (
     (
@@ -192,8 +192,8 @@ WIDTH = 12
 HEIGHT = 22
 INTERVAL = 40
 FIELD = [[0 for _ in range(WIDTH)] for _ in range(HEIGHT)]
-COLORS = ((255, 255, 255), (255, 235, 205), (152, 251, 152), (224, 255, 255), \
-          (255, 228, 225), (238, 130, 238), (176, 196, 222), (255, 192, 203), (128, 128, 128))
+COLORS = ((0, 0, 0), (255, 165, 0), (0, 0, 255), (0, 255, 255), \
+          (0, 255, 0), (255, 0, 255), (255, 255, 0), (255, 0, 0), (128, 128, 128))
 BLOCK = None
 NEXT_BLOCK = None
 
@@ -249,6 +249,8 @@ def main():
             elif key == K_LEFT:
                 next_x -= 1
             elif key == K_DOWN:
+                next_y += 1
+            elif key == K_SPACE:
                 next_y += 1
 
             if not is_overlapped(next_x, next_y, next_t):

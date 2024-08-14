@@ -14,7 +14,7 @@ import time
 from math import sqrt
 from random import randint
 
-from pygame.constants import KEYDOWN,  K_DOWN, K_LEFT, K_RIGHT, K_SPACE
+from pygame.constants import KEYDOWN,  K_DOWN, K_LEFT, K_RIGHT, K_UP
 from data import BLOCK_DATA
 from pygame.locals import QUIT
 
@@ -94,7 +94,7 @@ def main():
             BLOCK.xpos +=1
         if key == K_LEFT:
             BLOCK.xpos -= 1
-        if key == K_SPACE:
+        if key == K_UP:
             BLOCK.turn = (BLOCK.turn + 1) % 4
             
     

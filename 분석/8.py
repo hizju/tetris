@@ -12,7 +12,7 @@ import time
 from math import sqrt
 from random import randint
 
-from pygame.constants import KEYDOWN,  K_DOWN, K_LEFT, K_RIGHT, K_SPACE
+from pygame.constants import KEYDOWN,  K_DOWN, K_LEFT, K_RIGHT, K_UP
 from data import BLOCK_DATA
 from pygame.locals import QUIT
 
@@ -107,7 +107,7 @@ def main():
             next_x +=1
         if key == K_LEFT:
             next_x -= 1
-        if key == K_SPACE:
+        if key == K_UP:
             next_t = (next_t + 1) % 4
             
         if not is_overalpped(next_x, next_y, next_t):

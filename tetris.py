@@ -4,7 +4,7 @@ from math import sqrt
 from random import randint
 import pygame
 from pygame.locals import QUIT, KEYDOWN, \
-    K_LEFT, K_RIGHT, K_DOWN, K_SPACE
+    K_LEFT, K_RIGHT, K_DOWN, K_UP
 
 BLOCK_DATA = (
     (
@@ -241,7 +241,7 @@ def main():
             
             next_x, next_y, next_t = \
                 BLOCK.xpos, BLOCK.ypos, BLOCK.turn
-            if key == K_SPACE:
+            if key == K_UP:
                 pygame.key.set_repeat()
                 next_t = (next_t + 1) % 4
             elif key == K_RIGHT:

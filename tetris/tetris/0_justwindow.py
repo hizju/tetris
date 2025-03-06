@@ -5,7 +5,6 @@ import sys
 import pygame
 from pygame.locals import QUIT
 
-// commit test
 
 pygame.init()
 SURFACE = pygame.display.set_mode((400,300))
